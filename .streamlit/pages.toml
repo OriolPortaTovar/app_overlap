@@ -1,0 +1,13 @@
+[[pages]]
+path = "pages/EDA.py"
+name = "Exploratory Data Analysis"
+icon = "📊"
+
+[[pages]]
+path = "pages/vp_test.py"
+name = "Predictive Quiz"
+icon = "📋"
+
+
+
+
