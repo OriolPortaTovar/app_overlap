@@ -44,7 +44,7 @@ nav = get_nav_from_toml(".streamlit/pages.toml")
 with st.sidebar:
     #add_logo_only("img/logo.png", height_px=100)
     st.logo(
-        link = path_img,
+        path_img,
         size = "large"
     )
     pg = st.navigation(nav)
