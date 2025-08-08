@@ -33,7 +33,11 @@ nav = get_nav_from_toml(".streamlit/pages.toml")
 
 # 3. Sidebar: inject only the logo, then navigation
 with st.sidebar:
-    add_logo_only("img/logo.png", height_px=100)
+    #add_logo_only("img/logo.png", height_px=100)
+    st.logo(
+        link = "img/logo.png",
+        size = "large"
+    )
     pg = st.navigation(nav)
 
 # 4. Title + run
