@@ -2,7 +2,6 @@ import streamlit as st
 from st_pages import get_nav_from_toml, add_page_title
 import base64
 
-
 def add_logo_only(png_path: str, height_px: int = 100):
     # 1) Embed the local file as Base64
     with open(png_path, "rb") as f:
