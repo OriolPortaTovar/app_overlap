@@ -34,12 +34,22 @@ warnings.filterwarnings('ignore', message=".*DataFrame columns are not unique.*"
 
 from tensorflow.keras.models import load_model
 
-# Initialize file paths for scaler, means CSV, and PCA model
-scaler_path = "models/PCA/scaler_minmax.pkl"
-means_csv_path = "models/PCA/mean_scale.csv"
-pca_path = "models/PCA/pca_model.pkl"
-pruned_clf_path = "models/DT/pruned_clf.joblib"
-nn_path = "models/NN/nn_model.h5"
+from pathlib import Path
+
+# app root = one level up from utils/
+APP_ROOT = Path(__file__).resolve().parents[1]
+
+MODELS_DIR = APP_ROOT / "models"
+DATA_DIR   = APP_ROOT / "data"
+
+def _p(p: Path) -> str:
+    return str(p)
+
+scaler_path     = _p(MODELS_DIR / "PCA" / "scaler_minmax.pkl")
+means_csv_path  = _p(MODELS_DIR / "PCA" / "mean_scale.csv")
+pca_path        = _p(MODELS_DIR / "PCA" / "pca_model.pkl")
+pruned_clf_path = _p(MODELS_DIR / "DT"  / "pruned_clf.joblib")
+nn_path         = _p(MODELS_DIR / "NN"  / "nn_model.h5")
 
 
 #EDA processor--------------------------------------------------------------

@@ -36,7 +36,8 @@ from utils.data_processor import (
     metric_parser,
     combine_shap_percent,
     rebuild_shap_dict,
-    overlap_metric_parser 
+    overlap_metric_parser,
+    _p
 )
 
 
@@ -44,9 +45,11 @@ progress.progress(60, text="Loading Predictors…")
 from utils.data_visualization import(
     shap_vizz
 )
-
-
-feature_pc_weights_path = r"data\feat_vs_pc_importance.csv"
+from pathlib import Path
+APP_ROOT = Path(__file__).resolve().parents[1]
+DATA_DIR = APP_ROOT / "data"
+feature_pc_weights_path         = _p(DATA_DIR / "NN"  / "nn_model.h5")
+#feature_pc_weights_path = r"data\feat_vs_pc_importance.csv"
 
 
 st.set_page_config(page_title="Predictive Quiz",layout="wide",
