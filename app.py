@@ -2,14 +2,6 @@ import streamlit as st
 from st_pages import get_nav_from_toml, add_page_title
 import base64
 
-from utils.data_processor import _p
-from pathlib import Path
-# app root = one level up from utils/
-APP_ROOT = Path(__file__).resolve().parents[1]
-
-IMG_DIR = APP_ROOT / "img"
-
-path_img = _p(IMG_DIR / "logo.png")
 
 def add_logo_only(png_path: str, height_px: int = 100):
     # 1) Embed the local file as Base64
@@ -42,11 +34,7 @@ nav = get_nav_from_toml(".streamlit/pages.toml")
 
 # 3. Sidebar: inject only the logo, then navigation
 with st.sidebar:
-    #add_logo_only("img/logo.png", height_px=100)
-    st.logo(
-        path_img,
-        size = "large"
-    )
+    add_logo_only("img/logo.png", height_px=100)
     pg = st.navigation(nav)
 
 # 4. Title + run
