@@ -48,7 +48,7 @@ from utils.data_visualization import(
 from pathlib import Path
 APP_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = APP_ROOT / "data"
-feature_pc_weights_path         = _p(DATA_DIR / "NN"  / "nn_model.h5")
+feature_pc_weights_path         = _p(DATA_DIR / "feat_vs_pc_importance.csv")
 #feature_pc_weights_path = r"data\feat_vs_pc_importance.csv"
 
 
